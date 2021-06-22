@@ -9,3 +9,4 @@ petname = input("Favourite pet name?\n")
 bandname = city + " " + petname
 print(f"Your bandname could be {bandname}")
 #5. Make sure the input cursor shows on a new line!
+
