@@ -14,8 +14,7 @@ if height >= 120:
   elif age < 18 :
     bill = 7
     print("Youth tickets are $7")
-  elif age > 45 and age < 55:
-    bill = 0
+  elif age >= 45 and age <= 55:
     print("People your age ride for free!")
   else:
     bill = 12
@@ -99,4 +98,44 @@ if cheesy_crust == "Y":
   
 print(f"Your final bill is ${price}💵")
 
+# Love Calculator
+# lower() function changes all the letters in a string to lowercase
+# count() function will give you the number of times a letter occurs in a string
+print("Welcome to the Love Calculator 💕")
+name1 = input("Whats your name? \n").lower()
+name2 = input("Whats your lovers name? \n").lower()
+
+lovescore = 0
+
+firstNumber = 0
+firstNumber += name1.count("t")
+firstNumber += name1.count("r")
+firstNumber += name1.count("u")
+firstNumber += name1.count("e")
+firstNumber += name2.count("t")
+firstNumber += name2.count("r")
+firstNumber += name2.count("u")
+firstNumber += name2.count("e")
+
+# print(name1, name2, firstNumber)
+
+secondNumber = 0
+secondNumber += name1.count("l")
+secondNumber += name1.count("o")
+secondNumber += name1.count("v")
+secondNumber += name1.count("e")
+secondNumber += name2.count("l")
+secondNumber += name2.count("o")
+secondNumber += name2.count("v")
+secondNumber += name2.count("e")
+
+lovescore = int(str(firstNumber) + str(secondNumber))
+
+if lovescore < 10 or lovescore > 90:
+  print(f"Your score is {lovescore}, you to together like coke and mentos")
+elif lovescore >= 40 and lovescore <= 50:
+  print(f"Your score is {lovescore}, you are alright together")
+else:
+  print(f"Your score is {lovescore}")
+  
 # Day 3 Project - Treasue Island
