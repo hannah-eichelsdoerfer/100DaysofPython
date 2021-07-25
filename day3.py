@@ -139,3 +139,38 @@ else:
   print(f"Your score is {lovescore}")
   
 # Day 3 Project - Treasue Island
+print('''
+______________________________________________________________
+           _  _             _  _
+  .       /\\/%\       .   /%\/%\     .
+      __.<\\%#//\,_       <%%#/%%\,__  .
+.    <%#/|\\%%%#///\    /^%#%%\///%#\\
+      ""/%/""\ \""//|   |/""'/ /\//"//'
+ .     L/'`   \ \  `    "   / /  ```
+        `      \ \     .   / /       .
+ .       .      \ \       / /  .
+        .        \ \     / /          .
+   .      .    ..:\ \:::/ /:.     .     .
+______________/ \__;\___/\;_/\________________________________
+''')
+print("Welcome to Treasue Island 🏴‍☠️")
+print("Your missure is to find the treasure...")
+
+direction = input("--- You are at a crossroad, where do you want to go? Type 'left' or 'right': \n").lower()
+if direction == "right":
+  print("Game over, you fell into a well hidden trap.")
+elif direction == "left":
+  action = input("--- You've reached the shore of the ocean but you see an island in the middle. Type 'wait' to wait for a boat or 'swim' to make the journey across yourself.\n").lower()
+  if action == "swim":
+    print("Game over, you were eaten by a crocodile while swimming towards the island 🐊")
+  elif action == "wait":
+    door = input("--- You arrived at the island unharmed, there are three hidden doors in the sand, a red, a yellow and a blue one. Which color do you choose? \n").lower()
+    if door == "red":
+      print("Game over - huge flames shot out of the door 🔥")
+    elif door == "yellow":
+      print("You found the treasure - you won!!! 🏆")
+    elif door == "blue":
+      print("The blue door let the water flood the island, you've drowned 🌊")
+    else:
+      print("Game over. You starved looking for a door with this color.")
+    
