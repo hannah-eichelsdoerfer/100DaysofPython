@@ -1,5 +1,6 @@
 import random
-
+from hangman_words import word_list
+from hangman_ascii_art import logo, stages
 # Day 7 Project - Hangman
 
 # generate a random word -> fill letters with blanks
@@ -8,70 +9,11 @@ import random
 # else start drawing hangman
 # this will be repeated till hanged or word guessed (while loop?)
 
-stages = ['''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''']
+print(logo)
 
-word_list = ["aardvark", "baboon", "camel"]
 display = []
-
 chosen_word = random.choice(word_list)
 word_lenght = len(chosen_word)
-print(f'Pssst, the solution is {chosen_word}.')
 
 for _ in chosen_word:
     display += "_"
@@ -83,6 +25,7 @@ hanged = 0
 
 while not end_of_game:
   guess = input("Guess a letter: \n").lower()
+  
   for number in range(word_lenght):
     letter = chosen_word[number]
     if letter == guess:
@@ -90,6 +33,7 @@ while not end_of_game:
   
   if guess not in chosen_word:
     hanged += 1
+    print(f"Sorry, the letter {letter} is not in the secret word, the hanging continues...")
     print(stages[hanged])
     if hanged == 6:
       end_of_game = True
